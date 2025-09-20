@@ -2,6 +2,10 @@
 
 Un sistema di raccomandazione cinematografica all'avanguardia che combina tre approcci distinti: **Sentence Transformers** per la comprensione semantica profonda, **TF-IDF + KNN** per il filtraggio basato su contenuto, e **API TMDB** per raccomandazioni collaborative ufficiali.
 
+## Demo
+https://reccomandation-engine-nlp.streamlit.app
+
+
 ## 📋 Panoramica
 
 Questo progetto presenta un'analisi comparativa di tre metodologie di raccomandazione:

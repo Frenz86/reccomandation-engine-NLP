@@ -316,7 +316,7 @@ def display_movie_card_with_rating(movie_title, tmdb_available, headers, image_u
     
     search_results = search_movie_tmdb(movie_title, tmdb_available, headers)
     if search_results and search_results[0].get("poster_path"):
-        st.image(image_url + search_results[0]["poster_path"], use_container_width=True)
+        st.image(image_url + search_results[0]["poster_path"], width='stretch')
         st.markdown(f"<div class='movie-rating'>⭐ {search_results[0].get('vote_average','N/A')}/10</div>", unsafe_allow_html=True)
     else:
         st.markdown(
@@ -588,7 +588,7 @@ def main():
             for i, movie in enumerate(default_movies):
                 with cols[i]:
                     st.markdown("<div class='movie-card'>", unsafe_allow_html=True)
-                    st.image(IMAGE_URL + movie["poster"], use_container_width=True)
+                    st.image(IMAGE_URL + movie["poster"], width='stretch')
                     if st.button(movie["title"], key=f"tmdb_default_{i}"):
                         st.session_state["active_movie_tmdb"] = movie["title"]
                         st.rerun()
@@ -614,7 +614,7 @@ def main():
                                 poster_path = rec.get("poster_path")
                                 st.markdown("<div class='movie-card'>", unsafe_allow_html=True)
                                 if poster_path:
-                                    st.image(IMAGE_URL + poster_path, use_container_width=True)
+                                    st.image(IMAGE_URL + poster_path, width='stretch')
                                 else:
                                     st.markdown(
                                         "<div style='height:300px; background: linear-gradient(135deg,#ddd,#f8f8f8); "
